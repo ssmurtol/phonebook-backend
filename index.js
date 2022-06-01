@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 
 const cors = require('cors')
+app.use(express.static('build'))
 
 app.use(cors())
 
@@ -18,13 +19,13 @@ let persons = [
     },
     {
       id: 3,
-      content: "Dan Abramov",
-      date: "12-34-567890",
+      name: "Dan Abramov",
+      number: "12-34-567890",
     },
     {
-        id: 4,
-        content: "Mary Poppendick",
-        date: "39-23-123456",
+      id: 4,
+      name: "Mary Poppendick",
+      number: "39-23-123456",
       }
   ]
 
