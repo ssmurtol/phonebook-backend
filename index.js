@@ -13,14 +13,14 @@ app.use(cors())
 
 app.use(express.json())
 
-/*app.get('/', (req, res) => {
+app.get('/', (req, res) => {
   res.send('<h1>Hello World!</h1>')
 })
 
 app.get('/info', (req, res) => {
   res.send('<p>Phonebook has info for ' + persons.length +
     ' people</p>' + new Date().toString())
-})*/
+})
 
 app.get('/api/persons', (request, response) => {
   Person.find({}).then(persons => {
@@ -95,7 +95,7 @@ const errorHandler = (error, request, response, next) => {
 
 app.use(errorHandler)
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
